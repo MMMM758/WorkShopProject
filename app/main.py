@@ -18,8 +18,8 @@ print("Mongo_config", mongo_config)
 
 # "host" :"location",
 # "port" : "27017",
-# "user" : "rooi",
-# "password" : "rooi",
+# "user" : "root",
+# "password" : "root",
 # "auth" : "admin",
 # "db" : "waterpark",
 # "collection" : "rides",
@@ -52,8 +52,8 @@ def index():
     return JSONResponse(content={"message": "Rides Info"}, status_code=200)
 
 
-#!อ่านข้อมูลในdb มีการsortโดยเรียงmenu_typeตามตัวอักษร A-Z , Z-A
-@app.get("/rides/")
+#!อ่านข้อมูลในdb มีการsortโดยเรียง menu_x ตามตัวอักษร A-Z , Z-A
+@app.get("/rides")
 def get_rides(
     sort_by: Optional[str] = None,
     order: Optional[str] = Query(None, min_length=3, max_length=4),
